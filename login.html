@@ -814,15 +814,70 @@
     }
 
     function enviarWhatsAppFerramenta() {
-        let fone = document.getElementById('tool-phone').value.replace(/\D/g, '');
-        if(!fone) return alert("Por favor, configure o número da ferramentaria primeiro.");
-        if (fone.length <= 11) fone = "55" + fone;
+    let fone = document.getElementById('tool-phone').value.replace(/\D/g, '');
+    if(!fone) return alert("Por favor, configure o número da ferramentaria primeiro.");
+    if (fone.length <= 11) fone = "55" + fone;
 
-        const msg = `*SOLICITAÇÃO DE FERRAMENTA*\\nSetor: ${document.getElementById('tool-setor').value}\\nItem: ${document.getElementById('tool-item').value}`;
-        const url = `https://api.whatsapp.com/send?phone=${fone}&text=${encodeURIComponent(msg)}`;
-        window.open(url, '_blank').focus();
-    }
+    // Coletar todos os dados do formulário
+    const setor = document.getElementById('tool-setor').value || 'Não informado';
+    const matricula = document.getElementById('tool-matricula').value || 'Não informada';
+    const solicitante = document.getElementById('tool-user').value || 'Não informado';
+    const tecnico = document.getElementById('tool-tecnico').value || 'Não informado';
+    const responsavel = document.getElementById('tool-responsavel').value || 'Não informado';
+    const item = document.getElementById('tool-item').value || 'Não informado';
+    const quantidade = document.getElementById('tool-qtd').value || '1';
+    const dataEntrega = document.getElementById('tool-date').value || 'Não informada';
+    const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
+    const dataAtual = new Date().toLocaleString('pt-BR');
 
+    // Formatar datas para exibição amigável
+    const formatarData = (data) => {
+        if (!data || data === 'Não informada') return data;
+        const partes = data.split('-');
+        return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    };
+
+    const dataEntregaFormatada = formatarData(dataEntrega);
+    const prazoLimiteFormatado = formatarData(prazoLimite);
+
+    // Construir a mensagem com formato profissional
+    const msg = `
+*🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST*
+
+*📋 DADOS DO SOLICITANTE*
+━━━━━━━━━━━━━━━━━━━━
+🏢 *Empresa/Setor:* ${setor}
+👤 *Solicitante:* ${solicitante}
+🔢 *Matrícula:* ${matricula}
+👨‍🔧 *Técnico Responsável:* ${tecnico}
+👔 *Responsável pelo Setor:* ${responsavel}
+
+*🛠️ DETALHES DA SOLICITAÇÃO*
+━━━━━━━━━━━━━━━━━━━━
+📦 *Item:* ${item}
+🔢 *Quantidade:* ${quantidade}
+📅 *Data de Entrega:* ${dataEntregaFormatada}
+⏰ *Prazo Limite:* ${prazoLimiteFormatado}
+
+*📌 INFORMAÇÕES ADICIONAIS*
+━━━━━━━━━━━━━━━━━━━━
+📝 *Solicitação Gerada em:* ${dataAtual}
+🆔 *Protocolo:* LHOST-${Date.now().toString().slice(-6)}
+
+*⚠️ IMPORTANTE:*
+- Confirmar disponibilidade no estoque
+- Registrar saída no sistema
+- Comunicar ao solicitante sobre o prazo
+
+*📱 Responder por este mesmo canal*
+    `.trim();
+
+    // Gerar URL do WhatsApp
+    const url = `https://api.whatsapp.com/send?phone=${fone}&text=${encodeURIComponent(msg)}`;
+    
+    // Abrir WhatsApp em nova aba
+    window.open(url, '_blank');
+}
     // --- NOVO PROTOCOLO: VIGIA EM TEMPO REAL NA TELA DO OPERADOR ---
     function checarAprovacaoOperador() {
         let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
