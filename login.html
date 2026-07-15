@@ -437,7 +437,86 @@
         </div>
     </div>
 </section>
+<!-- ===== SEÇÃO CONTATOS ===== -->
+<section id="tab-contatos" class="tab-content hidden">
+    <div class="card" style="text-align: center; padding: 40px;">
+        <h3 style="font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 30px;">📱 Nossos Contatos</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; max-width: 800px; margin: 0 auto;">
+            
+            <!-- WhatsApp -->
+            <div style="background: #f0fdf4; padding: 30px 20px; border-radius: 16px; border: 2px solid #25D366;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">📱</div>
+                <h4 style="color: #075E54; margin: 10px 0 5px 0;">WhatsApp</h4>
+                <p style="font-size: 1.2rem; font-weight: 600; color: #25D366; margin: 5px 0;">
+                    <a href="https://wa.me/5531983866552" target="_blank" style="color: #25D366; text-decoration: none;">
+                        (31) 98386-6552
+                    </a>
+                </p>
+                <small style="color: #666;">Clique para falar conosco</small>
+            </div>
+            
+            <!-- Email -->
+            <div style="background: #f0f7ff; padding: 30px 20px; border-radius: 16px; border: 2px solid #0078D4;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">📧</div>
+                <h4 style="color: #0078D4; margin: 10px 0 5px 0;">E-mail</h4>
+                <p style="font-size: 1rem; font-weight: 600; color: #0078D4; margin: 5px 0; word-break: break-all;">
+                    <a href="mailto:fluxodigital@outlook.com" style="color: #0078D4; text-decoration: none;">
+                        fluxodigital@outlook.com
+                    </a>
+                </p>
+                <small style="color: #666;">Envie um e-mail para nós</small>
+            </div>
+            
+            <!-- Site -->
+            <div style="background: #f0fdf4; padding: 30px 20px; border-radius: 16px; border: 2px solid #043873;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">🌐</div>
+                <h4 style="color: #043873; margin: 10px 0 5px 0;">Site</h4>
+                <p style="font-size: 1rem; font-weight: 600; color: #043873; margin: 5px 0; word-break: break-all;">
+                    <a href="https://www.fluxodigital.com.br" target="_blank" style="color: #043873; text-decoration: none;">
+                        www.fluxodigital.com.br
+                    </a>
+                </p>
+                <small style="color: #666;">Visite nosso site</small>
+            </div>
+        </div>
+        
+        <!-- Logo -->
+        <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 12px;">
+            <h4 style="color: var(--primary-navy); margin: 0;">FLUXO DIGITAL</h4>
+            <p style="color: #666; margin: 5px 0 0 0;">Zero atrasos, zero dor de cabeça</p>
+        </div>
+    </div>
+</section>
 
+<!-- ===== SEÇÃO BMCANVAS ===== -->
+<section id="tab-bmcanvas" class="tab-content hidden">
+    <div class="card" style="padding: 20px;">
+        <h3 style="text-align: center; font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 20px;">📊 Business Model Canvas</h3>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">Modelo de Negócio - Fluxo Digital</p>
+        
+        <!-- Imagem do BMCANVAS -->
+        <div style="display: flex; justify-content: center; align-items: center; background: #f8f9fa; border-radius: 12px; padding: 20px; min-height: 300px;">
+            <img src="BMCANVAS.jpeg" alt="Business Model Canvas" style="max-width: 100%; max-height: 600px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        </div>
+        
+        <!-- Legenda resumida -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 20px; font-size: 0.8rem;">
+            <div style="background: #f0f7ff; padding: 10px; border-radius: 8px; text-align: center;">
+                <strong style="color: var(--primary-navy);">Parcerias Chave</strong>
+                <p style="margin: 5px 0 0 0; color: #666;">Segurança, TI, Logística</p>
+            </div>
+            <div style="background: #f0fdf4; padding: 10px; border-radius: 8px; text-align: center;">
+                <strong style="color: var(--primary-navy);">Proposta de Valor</strong>
+                <p style="margin: 5px 0 0 0; color: #666;">Zero atrasos, zero dor de cabeça</p>
+            </div>
+            <div style="background: #fef9e7; padding: 10px; border-radius: 8px; text-align: center;">
+                <strong style="color: var(--primary-navy);">Clientes</strong>
+                <p style="margin: 5px 0 0 0; color: #666;">Mineração, Indústria, Executivo</p>
+            </div>
+        </div>
+    </div>
+</section>
         <section id="tab-preencher-apr" class="tab-content hidden">
             <div class="apr-container" style="margin: 0 auto;">
                 <div class="apr-header">
@@ -544,6 +623,8 @@
     </div>
 </div>
 
+
+
 <script>
 // ============================================================
 // VARIÁVEIS GLOBAIS
@@ -639,6 +720,21 @@ function login() {
 // ============================================================
 // NAVEGAÇÃO
 // ============================================================
+
+// ===== FUNÇÃO showTab (DEVE VIR ANTES DE setupNav) =====
+function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+    const abaAlvo = document.getElementById('tab-' + id);
+    if(abaAlvo) abaAlvo.classList.remove('hidden');
+
+    document.querySelectorAll('#main-nav button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(id)) {
+            btn.classList.add('active');
+        }
+    });
+}
+
 function setupNav() {
     const nav = document.getElementById('main-nav');
     let html = `<button class="active" onclick="showTab('dds')">DDS Semanal</button>`;
@@ -652,20 +748,33 @@ function setupNav() {
     }
     
     html += `<button onclick="showTab('ferramentas')">Ferramentaria</button>`;
+    // ===== NOVAS ABAS =====
+    html += `<button onclick="showTab('contatos')" style="background: #25D366; color: white;">📱 Contatos</button>`;
+    html += `<button onclick="showTab('bmcanvas')" style="background: #8E44AD; color: white;">📊 BMCANVAS</button>`;
+    // ===== FIM NOVAS ABAS =====
+    
     nav.innerHTML = html;
 }
 
-function showTab(id) {
-    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
-    const abaAlvo = document.getElementById('tab-' + id);
-    if(abaAlvo) abaAlvo.classList.remove('hidden');
-
-    document.querySelectorAll('#main-nav button').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(id)) {
-            btn.classList.add('active');
-        }
-    });
+function setupNav() {
+    const nav = document.getElementById('main-nav');
+    let html = `<button class="active" onclick="showTab('dds')">DDS Semanal</button>`;
+    
+    if(user.role === 'operador') {
+        html += `<button onclick="showTab('preencher-apr')" style="background: #E74C3C; color: white;">📝 Preencher APR</button>`;
+        html += `<button onclick="showTab('reclamar')">Reclamações</button>`;
+    } else {
+        html += `<button onclick="showTab('aprovacao-apr')">Aprovar APRs</button>`;
+        html += `<button onclick="showTab('ver-reclamacoes')">Mural Reclamações</button>`;
+    }
+    
+    html += `<button onclick="showTab('ferramentas')">Ferramentaria</button>`;
+    // ===== NOVAS ABAS =====
+    html += `<button onclick="showTab('contatos')" style="background: #25D366; color: white;">📱 Contatos</button>`;
+    html += `<button onclick="showTab('bmcanvas')" style="background: #8E44AD; color: white;">📊 BMCANVAS</button>`;
+    // ===== FIM NOVAS ABAS =====
+    
+    nav.innerHTML = html;
 }
 
 // ============================================================
