@@ -12,21 +12,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
         :root { 
-            /* Paleta inspirada no Whitepace */
-            --primary-navy: #043873;      /* Azul escuro profissional */
-            --primary-blue: #4F9CF9;      /* Azul vibrante para botões */
-            --primary-hover: #3a82e0;     /* Azul vibrante escurecido para hover */
-            --bg-light: #F4F9FF;          /* Fundo geral da página (azul super claro) */
-            --card-bg: #FFFFFF;           /* Fundo dos cartões */
-            --text-main: #212529;         /* Cor do texto principal */
-            --text-muted: #6c757d;        /* Texto secundário/legendas */
-            --border-color: #E2E8F0;      /* Cor das bordas suaves */
-            --success: #27ae60; 
-            --danger: #e74c3c; 
+            --primary-navy: #043873;
+            --primary-blue: #4F9CF9;
+            --primary-hover: #3a82e0;
+            --bg-light: #F4F9FF;
+            --card-bg: #FFFFFF;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --border-color: #E2E8F0;
+            --success: #27ae60;
+            --danger: #e74c3c;
         }
 
         body { 
-            font-family: 'Inter', sans-serif; /* Fonte moderna e limpa */
+            font-family: 'Inter', sans-serif;
             margin: 0; 
             background: var(--bg-light); 
             color: var(--text-main); 
@@ -35,7 +34,6 @@
         
         .hidden { display: none !important; }
         
-        /* ================= Layout & Tipografia ================= */
         header { 
             background: var(--primary-navy); 
             color: white; 
@@ -48,14 +46,13 @@
         
         header strong { font-weight: 700; font-size: 1.1rem; }
         
-        /* Navegação estilo "Pill" (pílulas) */
         nav { 
             background: var(--card-bg); 
             display: flex; 
             overflow-x: auto; 
             padding: 1rem 2.5rem;
             border-bottom: 1px solid var(--border-color);
-            gap: 12px; /* Espaço entre os botões */
+            gap: 12px;
         }
         
         nav button { 
@@ -81,14 +78,13 @@
             box-shadow: 0 4px 10px rgba(79, 156, 249, 0.3);
         }
 
-        /* Container e Cartões Modernos */
         .container { padding: 30px; max-width: 1100px; margin: auto; }
         
         .card { 
             background: var(--card-bg); 
             padding: 35px; 
-            border-radius: 16px; /* Bordas mais arredondadas */
-            box-shadow: 0 10px 30px rgba(4, 56, 115, 0.04); /* Sombra bem suave */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(4, 56, 115, 0.04);
             margin-bottom: 25px; 
             border: 1px solid rgba(4, 56, 115, 0.05); 
         }
@@ -101,7 +97,6 @@
             margin-bottom: 20px;
         }
         
-        /* ================= Formulários ================= */
         .form-group { margin-bottom: 20px; }
         
         label { 
@@ -134,12 +129,11 @@
         
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
-        /* ================= Login Screen ================= */
         #login-screen { 
             height: 100vh; 
             display: flex; 
             align-items: center; 
-            justify-content: flex-start; /* Mantendo à esquerda como pedimos antes */
+            justify-content: flex-start;
             padding-left: 4%; 
             background: url('Logo\ Fluxo\ Digital.png') no-repeat center center; 
             background-size: cover; 
@@ -147,7 +141,7 @@
         }
 
         .login-card { 
-            background: rgba(255, 255, 255, 0.95); /* Fundo quase sólido para destacar do fundo */
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             padding: 50px 40px; 
             border-radius: 20px; 
@@ -164,13 +158,12 @@
             font-weight: 500;
         }
 
-        /* ================= Tabelas ================= */
         table { 
             width: 100%; 
-            border-collapse: separate; /* Necessário para bordas arredondadas na tabela */
+            border-collapse: separate;
             border-spacing: 0;
             border-radius: 12px;
-            overflow: hidden; /* Corta os cantos da tabela */
+            overflow: hidden;
             border: 1px solid var(--border-color);
         }
         
@@ -191,7 +184,6 @@
 
         tr:last-child td { border-bottom: none; }
         
-        /* ================= Botões ================= */
         .btn { 
             padding: 14px 24px; 
             border: none; 
@@ -226,7 +218,6 @@
             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.25);
         }
 
-        /* Ajuste fino botão "Sair" do header */
         header button {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -241,7 +232,6 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* ================= ESTILO DA DATA/HORA ================= */
         .data-hora-container {
             background: #F8FAFC;
             border: 1px dashed var(--primary-blue);
@@ -268,7 +258,35 @@
             border-radius: 6px;
             border: 1px solid var(--border-color);
         }
+
+        /* Estilos APR */
+        .apr-container { max-width: 100%; margin: 0 auto; overflow: hidden; }
+        .apr-header { text-align: center; padding: 12px 10px; background: #043873; color: white; border-radius: 10px 10px 0 0; }
+        .apr-header h1 { font-size: 1.2rem; margin: 3px 0; }
+        .apr-header p { font-size: 0.7rem; opacity: 0.8; margin: 0; }
+        .badge-qrcode { background: #27ae60; padding: 3px 10px; border-radius: 20px; font-size: 0.6rem; font-weight: 600; display: inline-block; }
+        .progress-container { width: 100%; background: #E2E8F0; border-radius: 10px; overflow: hidden; height: 4px; margin: 0; }
+        .progress-bar { height: 100%; background: #4F9CF9; width: 0%; transition: width 0.4s ease; }
+        .step-panel { display: none; padding: 14px 12px; background: white; border-radius: 0 0 10px 10px; border: 1px solid #E2E8F0; border-top: none; }
+        .step-panel.active { display: block; }
+        .step-title { font-weight: 700; font-size: 0.85rem; color: #043873; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #4F9CF9; }
+        .step-title span { background: #4F9CF9; color: white; padding: 2px 8px; border-radius: 20px; font-size: 0.65rem; margin-right: 6px; }
+        .question-card { border: 1px solid #ddd; padding: 10px 12px; border-radius: 6px; margin-bottom: 8px; }
+        .btn-toggle { padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px; background: #f8f9fa; cursor: pointer; font-weight: 600; font-size: 0.75rem; transition: all 0.2s; flex: 1; min-height: 32px; }
+        .btn-toggle.active { background: #2ECC71; color: white; border-color: #2ECC71; }
+        .btn-toggle.no.active { background: #E74C3C; border-color: #E74C3C; }
+        #footerControls { display: flex; gap: 8px; padding: 10px 12px; flex-wrap: wrap; }
+        #footerControls .btn { flex: 1; min-width: 60px; font-size: 0.75rem; padding: 8px 12px; min-height: 32px; }
         
+        @media (max-width: 599px) {
+            .container { padding: 15px; }
+            .card { padding: 20px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 10px; }
+            header { padding: 0.8rem 1rem; flex-direction: column; gap: 8px; }
+            nav { padding: 0.5rem 1rem; gap: 6px; }
+            nav button { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+            .login-card { padding: 30px 20px; width: 100%; max-width: 320px; }
+        }
     </style>
 </head>
 <body>
@@ -293,13 +311,11 @@
 
 <div id="main-app" class="hidden">
     <header>
-        
         <div><strong>FLUXO DIGITAL</strong> | Gestão Ativa</div>
         <div id="user-info"></div>
     </header>
 
-    <nav id="main-nav">
-        </nav>
+    <nav id="main-nav"></nav>
 
     <div class="container">
         <section id="tab-dds" class="tab-content">
@@ -347,559 +363,664 @@
             </div>
         </section>
 
-    <section id="tab-ferramentas" class="tab-content hidden">
-    <div class="card">
-        <h3>Solicitação de Ferramentas</h3>
-        
-        <!-- ===== CONTATOS ===== -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
-            
-            <!-- WhatsApp -->
-            <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border: 2px solid #25D366;">
-                <label style="color: #075E54;">📱 WhatsApp</label>
-                <div style="display: flex; gap: 8px; margin-top: 5px;">
-                    <input type="text" id="tool-phone" placeholder="Ex: 5531988887777" style="flex: 1;">
-                    <button onclick="savePhone()" class="btn" style="background:#25D366; color:white; padding: 5px 15px;">Salvar</button>
+        <section id="tab-ferramentas" class="tab-content hidden">
+            <div class="card">
+                <h3>Solicitação de Ferramentas</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                    <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border: 2px solid #25D366;">
+                        <label style="color: #075E54;">📱 WhatsApp</label>
+                        <div style="display: flex; gap: 8px; margin-top: 5px;">
+                            <input type="text" id="tool-phone" placeholder="Ex: 5531988887777" style="flex: 1;">
+                            <button onclick="savePhone()" class="btn" style="background:#25D366; color:white; padding: 5px 15px;">Salvar</button>
+                        </div>
+                    </div>
+                    <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; border: 2px solid #0078D4;">
+                        <label style="color: #0078D4;">📧 Outlook / Email</label>
+                        <div style="display: flex; gap: 8px; margin-top: 5px;">
+                            <input type="email" id="tool-email" placeholder="Ex: ferramentaria@empresa.com" style="flex: 1;">
+                            <button onclick="saveEmail()" class="btn" style="background:#0078D4; color:white; padding: 5px 15px;">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group"><label>Empresa/Setor</label><input type="text" id="tool-setor" value="LHOST - Produção"></div>
+                    <div class="form-group"><label>Matrícula</label><input type="text" id="tool-matricula" placeholder="000000"></div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group"><label>Solicitante (Operador)</label><input type="text" id="tool-user" readonly></div>
+                    <div class="form-group"><label>Solicitante Técnico</label><input type="text" id="tool-tecnico" placeholder="Nome do técnico"></div>
+                </div>
+
+                <div class="form-group"><label>Responsável pelo Setor</label><input type="text" id="tool-responsavel" placeholder="Nome do responsável"></div>
+
+                <hr>
+
+                <div class="grid-2">
+                    <div class="form-group"><label>Item Solicitado</label><input type="text" id="tool-item" placeholder="Ex: Chave de Fenda"></div>
+                    <div class="form-group"><label>Quantidade</label><input type="number" id="tool-qtd" value="1"></div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group"><label>Data de Entrega</label><input type="date" id="tool-date"></div>
+                    <div class="form-group"><label>Prazo Limite</label><input type="date" id="tool-deadline"></div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                    <button onclick="enviarWhatsAppFerramenta()" class="btn" style="background: #25D366; color: white; font-size: 1rem; padding: 12px;">
+                        📱 Enviar WhatsApp
+                    </button>
+                    <button onclick="enviarOutlookFerramenta()" class="btn" style="background: #0078D4; color: white; font-size: 1rem; padding: 12px;">
+                        📧 Enviar Outlook
+                    </button>
                 </div>
             </div>
-            
-            <!-- Outlook/Email -->
-            <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; border: 2px solid #0078D4;">
-                <label style="color: #0078D4;">📧 Outlook / Email</label>
-                <div style="display: flex; gap: 8px; margin-top: 5px;">
-                    <input type="email" id="tool-email" placeholder="Ex: ferramentaria@empresa.com" style="flex: 1;">
-                    <button onclick="saveEmail()" class="btn" style="background:#0078D4; color:white; padding: 5px 15px;">Salvar</button>
+        </section>
+
+        <section id="tab-preencher-apr" class="tab-content hidden">
+            <div class="apr-container" style="margin: 0 auto;">
+                <div class="apr-header">
+                    <span class="badge-qrcode">📱 QR-CODE ATIVO</span>
+                    <h1>APR Digital</h1>
+                    <p>Análise Preliminar de Risco Otimizada</p>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="step-panel" id="alertPanel" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">⚠️</div>
+                    <h2 style="color: var(--danger); margin-bottom: 10px;">Direito de Recusa Ativado</h2>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">Você sinalizou que não se sente seguro. A atividade está suspensa.</p>
+                    <button class="btn btn-primary" onclick="resetRecusal()" style="width: 100%;">Voltar e Corrigir</button>
+                </div>
+
+                <div class="step-panel active" id="step1">
+                    <div class="step-title"><span>1/4</span> Identificação & Prontidão</div>
+                    
+                    <div class="data-hora-container">
+                        <span class="data-hora-label">📅 Data/Hora:</span>
+                        <span class="data-hora-valor" id="currentDateTime">Carregando...</span>
+                    </div>
+
+                    <div class="question-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="margin-bottom: 10px;">Você está apto, descansado e se sente 100% seguro para executar a atividade?</div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-toggle yes active" onclick="setToggle(this, true, 'safety')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">SIM</button>
+                            <button class="btn btn-toggle no" onclick="setToggle(this, false, 'safety')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">NÃO</button>
+                        </div>
+                    </div>
+                    
+                    <div class="question-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="margin-bottom: 10px;">Todos os riscos estão controlados adequadamente?</div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-toggle yes active" onclick="setToggle(this, true, 'falaad')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">SIM</button>
+                            <button class="btn btn-toggle no" onclick="setToggle(this, false, 'falaad')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">NÃO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-panel" id="step2">
+                    <div class="step-title"><span>2/4</span> Seleção da Atividade</div>
+                    <div class="form-group">
+                        <label>Selecione a atividade principal do turno:</label>
+                        <select class="select-input" id="activitySelect" onchange="updateSmartLogic()" style="width: 100%; padding: 10px; margin-top: 5px;">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="soldagem">Soldagem / Corte a Quente</option>
+                            <option value="altura">Trabalho em Altura (> 2 metros)</option>
+                            <option value="eletrica">Intervenção Elétrica / Painéis</option>
+                            <option value="mecanica">Manutenção Mecânica Geral</option>
+                        </select>
+                    </div>
+
+                    <div id="smartPreview" style="display: none; background: #FAF9F6; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <strong style="font-size: 0.85rem; color: var(--primary-navy);">Riscos Mapeados:</strong>
+                        <div id="riskContainer" style="display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0;"></div>
+                        <strong style="font-size: 0.85rem; color: var(--primary-navy);">EPIs Obrigatórios:</strong>
+                        <div id="epiContainer" style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px;"></div>
+                    </div>
+                </div>
+
+                <div class="step-panel" id="step3">
+                    <div class="step-title"><span>3/4</span> Permissões & Emergência</div>
+                    
+                    <div id="pontoEncontroContainer" style="background: #EBF5FB; border: 2px solid #2E86C1; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                            <span style="font-size: 1.5rem;">📍</span>
+                            <strong style="color: #1A5276; font-size: 1rem;">Ponto de Encontro - Emergência</strong>
+                        </div>
+                        <div id="pontoEncontroInfo" style="background: white; padding: 12px; border-radius: 6px; border-left: 4px solid #2E86C1;">
+                            <p style="margin: 0; color: #2C3E50; font-size: 0.95rem;">
+                                <span style="font-weight: 600;">⚠️ Em caso de emergência, dirija-se ao:</span><br>
+                                <span id="pontoEncontroTexto" style="font-weight: 700; color: #7F8C8D; font-size: 1.05rem;">
+                                    Selecione uma atividade no passo 2
+                                </span>
+                            </p>
+                        </div>
+                        <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px; background: #FEF9E7; padding: 8px 12px; border-radius: 6px;">
+                            <span style="font-size: 0.9rem;">🚨</span>
+                            <span style="font-size: 0.8rem; color: #7D6608;">Em caso de incêndio ou acidente, siga para o ponto de encontro indicado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-panel" id="step4">
+                    <div class="step-title"><span>4/4</span> Validação e Assinatura</div>
+                    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center;">
+                        <p>Digite seu PIN para assinar eletronicamente:</p>
+                        <input type="password" id="userPin" maxlength="4" placeholder="••••" style="width: 100px; text-align: center; font-size: 20px; padding: 10px; letter-spacing: 5px;">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; padding: 20px;" id="footerControls">
+                    <button class="btn" id="btnBack" onclick="changeStep(-1)" style="flex: 1; visibility: hidden; background: #ddd;">Voltar</button>
+                    <button class="btn btn-primary" id="btnNext" onclick="changeStep(1)" style="flex: 1;">Avançar</button>
+                    <button class="btn btn-success" id="btnSubmit" onclick="submitFormAPR()" style="flex: 1; display: none;">Finalizar APR</button>
                 </div>
             </div>
-        </div>
-        <!-- ===== FIM CONTATOS ===== -->
-
-        <!-- Restante do formulário igual -->
-        <div class="grid-2">
-            <div class="form-group"><label>Empresa/Setor</label><input type="text" id="tool-setor" value="LHOST - Produção"></div>
-            <div class="form-group"><label>Matrícula</label><input type="text" id="tool-matricula" placeholder="000000"></div>
-        </div>
-
-        <div class="grid-2">
-            <div class="form-group"><label>Solicitante (Operador)</label><input type="text" id="tool-user" readonly></div>
-            <div class="form-group"><label>Solicitante Técnico</label><input type="text" id="tool-tecnico" placeholder="Nome do técnico"></div>
-        </div>
-
-        <div class="form-group"><label>Responsável pelo Setor</label><input type="text" id="tool-responsavel" placeholder="Nome do responsável"></div>
-
-        <hr>
-
-        <div class="grid-2">
-            <div class="form-group"><label>Item Solicitado</label><input type="text" id="tool-item" placeholder="Ex: Chave de Fenda"></div>
-            <div class="form-group"><label>Quantidade</label><input type="number" id="tool-qtd" value="1"></div>
-        </div>
-
-        <div class="grid-2">
-            <div class="form-group"><label>Data de Entrega</label><input type="date" id="tool-date"></div>
-            <div class="form-group"><label>Prazo Limite</label><input type="date" id="tool-deadline"></div>
-        </div>
-
-        <!-- ===== BOTÕES DE ENVIO ===== -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
-            <button onclick="enviarWhatsAppFerramenta()" class="btn" style="background: #25D366; color: white; font-size: 1rem; padding: 12px;">
-                📱 Enviar WhatsApp
-            </button>
-            <button onclick="enviarOutlookFerramenta()" class="btn" style="background: #0078D4; color: white; font-size: 1rem; padding: 12px;">
-                📧 Enviar Outlook
-            </button>
-        </div>
-        
-    </div>
-</section>
-
-       <section id="tab-preencher-apr" class="tab-content hidden">
-    <div class="apr-container" style="margin: 0 auto;">
-        <div class="apr-header">
-            <span class="badge-qrcode">📱 QR-CODE ATIVO</span>
-            <h1>APR Digital</h1>
-            <p>Análise Preliminar de Risco Otimizada</p>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <div class="step-panel" id="alertPanel" style="padding: 20px; text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 10px;">⚠️</div>
-            <h2 style="color: var(--danger); margin-bottom: 10px;">Direito de Recusa Ativado</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">Você sinalizou que não se sente seguro. A atividade está suspensa.</p>
-            <button class="btn btn-primary" onclick="resetRecusal()" style="width: 100%;">Voltar e Corrigir</button>
-        </div>
-
-        <div class="step-panel active" id="step1">
-            <div class="step-title"><span>1/4</span> Identificação & Prontidão</div>
-            
-            <!-- ========== DATA/HORA ADICIONADA AQUI ========== -->
-            <div class="data-hora-container">
-                <span class="data-hora-label">📅 Data/Hora:</span>
-                <span class="data-hora-valor" id="currentDateTime">Carregando...</span>
-            </div>
-            <!-- ========== FIM DA DATA/HORA ========== -->
-
-            <div class="question-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
-                <div style="margin-bottom: 10px;">Você está apto, descansado e se sente 100% seguro para executar a atividade?</div>
-                <div style="display: flex; gap: 10px;">
-                    <button class="btn btn-toggle yes active" onclick="setToggle(this, true, 'safety')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">SIM</button>
-                    <button class="btn btn-toggle no" onclick="setToggle(this, false, 'safety')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">NÃO</button>
-                </div>
-            </div>
-            
-            <div class="question-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
-                <div style="margin-bottom: 10px;">Todos os riscos estão controlados adequadamente?</div>
-                <div style="display: flex; gap: 10px;">
-                    <button class="btn btn-toggle yes active" onclick="setToggle(this, true, 'falaad')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">SIM</button>
-                    <button class="btn btn-toggle no" onclick="setToggle(this, false, 'falaad')" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">NÃO</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="step-panel" id="step2">
-            <div class="step-title"><span>2/4</span> Seleção da Atividade</div>
-            <div class="form-group">
-                <label>Selecione a atividade principal do turno:</label>
-                <select class="select-input" id="activitySelect" onchange="updateSmartLogic()" style="width: 100%; padding: 10px; margin-top: 5px;">
-                    <option value="">-- Selecione uma opção --</option>
-                    <option value="soldagem">Soldagem / Corte a Quente</option>
-                    <option value="altura">Trabalho em Altura (> 2 metros)</option>
-                    <option value="eletrica">Intervenção Elétrica / Painéis</option>
-                    <option value="mecanica">Manutenção Mecânica Geral</option>
-                </select>
-            </div>
-
-            <div id="smartPreview" style="display: none; background: #FAF9F6; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                <strong style="font-size: 0.85rem; color: var(--primary-navy);">Riscos Mapeados:</strong>
-                <div id="riskContainer" style="display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0;"></div>
-                <strong style="font-size: 0.85rem; color: var(--primary-navy);">EPIs Obrigatórios:</strong>
-                <div id="epiContainer" style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px;"></div>
-            </div>
-        </div>
-
-        <div class="step-panel" id="step3">
-            <div class="step-title"><span>3/4</span> Permissões & Emergência</div>
-            <div id="ptAlert" style="background: #FADBD8; color: #78281F; padding: 12px; border-radius: 8px; margin-bottom: 15px; display: none;">
-                <strong>Atenção:</strong> Esta atividade requer PT (Permissão para Trabalho).
-            </div>
-        </div>
-
-        <div class="step-panel" id="step4">
-            <div class="step-title"><span>4/4</span> Validação e Assinatura</div>
-            <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center;">
-                <p>Digite seu PIN para assinar eletronicamente:</p>
-                <input type="password" id="userPin" maxlength="4" placeholder="••••" style="width: 100px; text-align: center; font-size: 20px; padding: 10px; letter-spacing: 5px;">
-            </div>
-        </div>
-
-        <div style="display: flex; gap: 10px; padding: 20px;" id="footerControls">
-            <button class="btn" id="btnBack" onclick="changeStep(-1)" style="flex: 1; visibility: hidden; background: #ddd;">Voltar</button>
-            <button class="btn btn-primary" id="btnNext" onclick="changeStep(1)" style="flex: 1;">Avançar</button>
-            <button class="btn btn-success" id="btnSubmit" onclick="submitFormAPR()" style="flex: 1; display: none;">Finalizar APR</button>
-        </div>
-    </div>
-</section>
+        </section>
     </div>
 </div>
 
 <script>
- let user = { matricula: '', role: '', nome: '' };
+// ============================================================
+// VARIÁVEIS GLOBAIS
+// ============================================================
+let user = { matricula: '', role: '', nome: '' };
+let currentStep = 1;
+const totalSteps = 4;
 
-    // ========== FUNÇÃO DATA/HORA ==========
-    function atualizarDataHora() {
-        const agora = new Date();
-        const dataHora = agora.toLocaleString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
-        
-        const elemento = document.getElementById('currentDateTime');
-        if (elemento) {
-            elemento.textContent = dataHora;
-        }
+// ============================================================
+// DADOS DAS ATIVIDADES
+// ============================================================
+const activityData = {
+    soldagem: { 
+        riscos: ['Poeiras / Fumos metálicos', 'Incêndio / Explosão', 'Superfícies aquecidas'], 
+        epis: ['Máscara de solda', 'Avental de raspa', 'Luvas de segurança raspa'], 
+        requiresPT: true 
+    },
+    altura: { 
+        riscos: ['Queda - Nível diferente', 'Queda de objetos'], 
+        epis: ['Cinto de segurança', 'Capacete com jugular', 'Linha de vida'], 
+        requiresPT: true 
+    },
+    eletrica: { 
+        riscos: ['Choque elétrico', 'Bater Contra', 'Incêndio'], 
+        epis: ['Luvas dielétricas', 'Vestimenta antichama (NR10)', 'Bloqueio (LOTO)'], 
+        requiresPT: true 
+    },
+    mecanica: { 
+        riscos: ['Prensamento de membros', 'Ruído', 'Piso escorregadio'], 
+        epis: ['Luvas anti impacto', 'Óculos de proteção', 'Protetor auricular'], 
+        requiresPT: false 
     }
-    // ========== FIM DA FUNÇÃO DATA/HORA ==========
+};
 
-    // --- LOGIN E NAVEGAÇÃO ---
-    function login() {
-        user.nome = document.getElementById('nome').value;
-        user.matricula = document.getElementById('matricula').value;
-        user.role = document.getElementById('user-role').value.toLowerCase().trim(); 
-        
-        if(!user.matricula) return alert("Digite sua matrícula.");
+const pontosEncontro = {
+    soldagem: '📍 Saída de Emergência A - Estacionamento (ao lado do portão)',
+    altura: '📍 Portão Principal - Área de Convivência (próximo à guarita)',
+    eletrica: '📍 Saída de Emergência B - Sala de Treinamento (fundos do prédio)',
+    mecanica: '📍 Refeitório - Área Coberta (em frente ao refeitório)'
+};
 
-        document.getElementById('login-screen').classList.add('hidden');
-        document.getElementById('main-app').classList.remove('hidden');
-        document.getElementById('user-info').innerHTML = `<strong>${user.matricula}</strong> (${user.role} - ${user.nome}) <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>`;
-        
-        setupNav();
-        document.getElementById('tool-user').value = user.matricula;
-        document.getElementById('tool-phone').value = localStorage.getItem('contato_ferramentaria') || "";
-        showTab('dds');
-        
-        // ========== CHAMA A DATA/HORA AO LOGAR ==========
-        atualizarDataHora();
-        // Atualiza a cada segundo
-        setInterval(atualizarDataHora, 1000);
-        // ========== FIM DA CHAMADA ==========
-    }
-
-    function setupNav() {
-        const nav = document.getElementById('main-nav');
-        let html = `<button class="active" onclick="showTab('dds')">DDS Semanal</button>`;
-        
-        if(user.role === 'operador') {
-            html += `<button onclick="showTab('preencher-apr')" style="background: #E74C3C; color: white;">📝 Preencher APR</button>`;
-            html += `<button onclick="showTab('reclamar')">Reclamações</button>`;
-        } else {
-            html += `<button onclick="showTab('aprovacao-apr')">Aprovar APRs</button>`;
-            html += `<button onclick="showTab('ver-reclamacoes')">Mural Reclamações</button>`;
-        }
-        
-        html += `<button onclick="showTab('ferramentas')">Ferramentaria</button>`;
-        nav.innerHTML = html;
-    }
-
-    function showTab(id) {
-        document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
-        const abaAlvo = document.getElementById('tab-' + id);
-        if(abaAlvo) abaAlvo.classList.remove('hidden');
-
-        document.querySelectorAll('#main-nav button').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(id)) {
-                btn.classList.add('active');
-            }
-        });
-    }
-
-    // --- RECLAMAÇÕES ---
-    function enviarReclamacao() {
-        const dados = {
-            id: Date.now(),
-            autor: user.name,
-            setor: document.getElementById('rec-setor').value,
-            texto: document.getElementById('rec-texto').value,
-            data: new Date().toLocaleString()
-        };
-        let lista = JSON.parse(localStorage.getItem('reclamacoes') || "[]");
-        lista.push(dados);
-        localStorage.setItem('reclamacoes', JSON.stringify(lista));
-        alert("Reclamação enviada com sucesso!");
-        document.getElementById('rec-texto').value = "";
-    }
-
-    function carregarReclamacoesCoord() {
-        const lista = JSON.parse(localStorage.getItem('reclamacoes') || "[]");
-        const container = document.getElementById('lista-reclamacoes');
-        if(!container) return;
-        if(lista.length === 0) { container.innerHTML = "Nenhuma reclamação registrada."; return; }
-
-        container.innerHTML = lista.map(r => `
-            <div style="border-left: 4px solid var(--danger); padding: 10px; margin-bottom: 10px; background: #fff5f5">
-                <strong>Setor: ${r.setor}</strong> <br>
-                <small>${r.data} - Por: ${r.autor}</small> <br>
-                <p>${r.texto}</p>
-            </div>
-        `).join('');
-    }
-
-    // --- LÓGICA DA APR OTIMIZADA (OPERADOR) ---
-    let currentStep = 1;
-    const totalSteps = 4;
+// ============================================================
+// FUNÇÃO DATA/HORA
+// ============================================================
+function atualizarDataHora() {
+    const agora = new Date();
+    const dataHora = agora.toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
     
-    const activityData = {
-        soldagem: { riscos: ['Poeiras / Fumos metálicos', 'Incêndio / Explosão', 'Superfícies aquecidas'], epis: ['Máscara de solda', 'Avental de raspa', 'Luvas de segurança raspa'], requiresPT: true },
-        altura: { riscos: ['Queda - Nível diferente', 'Queda de objetos'], epis: ['Cinto de segurança', 'Capacete com jugular', 'Linha de vida'], requiresPT: true },
-        eletrica: { riscos: ['Choque elétrico', 'Bater Contra', 'Incêndio'], epis: ['Luvas dielétricas', 'Vestimenta antichama (NR10)', 'Bloqueio (LOTO)'], requiresPT: true },
-        mecanica: { riscos: ['Prensamento de membros', 'Ruído', 'Piso escorregadio'], epis: ['Luvas anti impacto', 'Óculos de proteção', 'Protetor auricular'], requiresPT: false }
-    };
+    const elemento = document.getElementById('currentDateTime');
+    if (elemento) {
+        elemento.textContent = dataHora;
+    }
+}
 
-    function setToggle(button, isYes, type) {
-        const container = button.parentElement;
-        container.querySelectorAll('.btn-toggle').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        button.style.background = isYes ? '#2ECC71' : '#E74C3C';
-        button.style.color = 'white';
+// ============================================================
+// FUNÇÃO LOGIN (ÚNICA E CORRETA)
+// ============================================================
+function login() {
+    user.nome = document.getElementById('nome').value;
+    user.matricula = document.getElementById('matricula').value;
+    user.role = document.getElementById('user-role').value.toLowerCase().trim(); 
+    
+    if(!user.matricula) return alert("Digite sua matrícula.");
+    if(!user.nome) return alert("Digite seu nome.");
 
-        if (!isYes) {
-            document.getElementById('step' + currentStep).classList.remove('active');
-            document.getElementById('alertPanel').classList.add('active');
-            document.getElementById('footerControls').style.display = 'none';
+    // Esconde tela de login e mostra app
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('main-app').classList.remove('hidden');
+    
+    // Atualiza info do usuário no header
+    document.getElementById('user-info').innerHTML = `
+        <strong>${user.matricula}</strong> (${user.role} - ${user.nome}) 
+        <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>
+    `;
+    
+    // Configura navegação
+    setupNav();
+    
+    // Carrega dados salvos
+    document.getElementById('tool-user').value = user.matricula;
+    document.getElementById('tool-phone').value = localStorage.getItem('contato_ferramentaria') || "";
+    document.getElementById('tool-email').value = localStorage.getItem('contato_ferramentaria_email') || "";
+    
+    // Mostra aba padrão
+    showTab('dds');
+    
+    // Inicia data/hora
+    atualizarDataHora();
+    setInterval(atualizarDataHora, 1000);
+}
+
+// ============================================================
+// NAVEGAÇÃO
+// ============================================================
+function setupNav() {
+    const nav = document.getElementById('main-nav');
+    let html = `<button class="active" onclick="showTab('dds')">DDS Semanal</button>`;
+    
+    if(user.role === 'operador') {
+        html += `<button onclick="showTab('preencher-apr')" style="background: #E74C3C; color: white;">📝 Preencher APR</button>`;
+        html += `<button onclick="showTab('reclamar')">Reclamações</button>`;
+    } else {
+        html += `<button onclick="showTab('aprovacao-apr')">Aprovar APRs</button>`;
+        html += `<button onclick="showTab('ver-reclamacoes')">Mural Reclamações</button>`;
+    }
+    
+    html += `<button onclick="showTab('ferramentas')">Ferramentaria</button>`;
+    nav.innerHTML = html;
+}
+
+function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+    const abaAlvo = document.getElementById('tab-' + id);
+    if(abaAlvo) abaAlvo.classList.remove('hidden');
+
+    document.querySelectorAll('#main-nav button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(id)) {
+            btn.classList.add('active');
         }
-    }
+    });
+}
 
-    function resetRecusal() {
-        document.getElementById('alertPanel').classList.remove('active');
-        document.getElementById('step' + currentStep).classList.add('active');
-        document.getElementById('footerControls').style.display = 'flex';
-    }
+// ============================================================
+// RECLAMAÇÕES
+// ============================================================
+function enviarReclamacao() {
+    const dados = {
+        id: Date.now(),
+        autor: user.nome,
+        setor: document.getElementById('rec-setor').value,
+        texto: document.getElementById('rec-texto').value,
+        data: new Date().toLocaleString()
+    };
+    let lista = JSON.parse(localStorage.getItem('reclamacoes') || "[]");
+    lista.push(dados);
+    localStorage.setItem('reclamacoes', JSON.stringify(lista));
+    alert("Reclamação enviada com sucesso!");
+    document.getElementById('rec-texto').value = "";
+}
 
-    function updateSmartLogic() {
-        const select = document.getElementById('activitySelect').value;
-        const preview = document.getElementById('smartPreview');
-        const rContainer = document.getElementById('riskContainer');
-        const eContainer = document.getElementById('epiContainer');
-        const alertPT = document.getElementById('ptAlert');
-        
-        if (!select) { preview.style.display = 'none'; alertPT.style.display = 'none'; return; }
-        
-        preview.style.display = 'block';
-        rContainer.innerHTML = ''; eContainer.innerHTML = '';
-        const data = activityData[select];
-        
+function carregarReclamacoesCoord() {
+    const lista = JSON.parse(localStorage.getItem('reclamacoes') || "[]");
+    const container = document.getElementById('lista-reclamacoes');
+    if(!container) return;
+    if(lista.length === 0) { container.innerHTML = "Nenhuma reclamação registrada."; return; }
+
+    container.innerHTML = lista.map(r => `
+        <div style="border-left: 4px solid var(--danger); padding: 10px; margin-bottom: 10px; background: #fff5f5">
+            <strong>Setor: ${r.setor}</strong> <br>
+            <small>${r.data} - Por: ${r.autor}</small> <br>
+            <p>${r.texto}</p>
+        </div>
+    `).join('');
+}
+
+// ============================================================
+// APR - LÓGICA
+// ============================================================
+function setToggle(button, isYes, type) {
+    const container = button.parentElement;
+    container.querySelectorAll('.btn-toggle').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    button.style.background = isYes ? '#2ECC71' : '#E74C3C';
+    button.style.color = 'white';
+
+    if (!isYes) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        document.getElementById('alertPanel').classList.add('active');
+        document.getElementById('footerControls').style.display = 'none';
+    }
+}
+
+function resetRecusal() {
+    document.getElementById('alertPanel').classList.remove('active');
+    document.getElementById('step' + currentStep).classList.add('active');
+    document.getElementById('footerControls').style.display = 'flex';
+}
+
+function updateSmartLogic() {
+    const select = document.getElementById('activitySelect').value;
+    const preview = document.getElementById('smartPreview');
+    const rContainer = document.getElementById('riskContainer');
+    const eContainer = document.getElementById('epiContainer');
+    const pontoTexto = document.getElementById('pontoEncontroTexto');
+    
+    if (!select) { 
+        preview.style.display = 'none'; 
+        if (pontoTexto) {
+            pontoTexto.textContent = 'Selecione uma atividade no passo 2';
+            pontoTexto.style.color = '#7F8C8D';
+        }
+        return; 
+    }
+    
+    preview.style.display = 'block';
+    rContainer.innerHTML = ''; 
+    eContainer.innerHTML = '';
+    const data = activityData[select];
+    
+    if (data) {
         data.riscos.forEach(r => rContainer.innerHTML += `<span style="background: #FFEAEA; color: #C0392B; padding: 4px 8px; border-radius: 12px; font-size: 0.75rem;">⚠ ${r}</span>`);
         data.epis.forEach(e => eContainer.innerHTML += `<span style="background: #E8F8F5; color: #117864; padding: 4px 8px; border-radius: 12px; font-size: 0.75rem;">🛡 ${e}</span>`);
-        alertPT.style.display = data.requiresPT ? 'block' : 'none';
+    }
+    
+    if (pontoTexto && pontosEncontro[select]) {
+        pontoTexto.textContent = pontosEncontro[select];
+        pontoTexto.style.color = '#1A5276';
+        pontoTexto.style.fontSize = '1.05rem';
+    }
+}
+
+function changeStep(direction) {
+    if (currentStep === 2 && direction === 1 && !document.getElementById('activitySelect').value) {
+        return alert('Por favor, selecione uma atividade para carregar os riscos.');
     }
 
-    function changeStep(direction) {
-        if (currentStep === 2 && direction === 1 && !document.getElementById('activitySelect').value) {
-            return alert('Por favor, selecione uma atividade para carregar os riscos.');
+    document.getElementById('step' + currentStep).classList.remove('active');
+    currentStep += direction;
+    document.getElementById('step' + currentStep).classList.add('active');
+
+    document.getElementById('btnBack').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+    document.getElementById('btnNext').style.display = currentStep === totalSteps ? 'none' : 'block';
+    document.getElementById('btnSubmit').style.display = currentStep === totalSteps ? 'block' : 'none';
+}
+
+function submitFormAPR() {
+    const pin = document.getElementById('userPin').value;
+    if (pin.length < 4) return alert('Digite seu PIN de 4 dígitos para assinar.');
+
+    const aprData = {
+        id: Date.now(),
+        user: user.nome,
+        colaborador: user.nome,
+        atividade: document.getElementById('activitySelect').options[document.getElementById('activitySelect').selectedIndex].text,
+        status: 'pendente',
+        data: new Date().toLocaleString(),
+        riscos: activityData[document.getElementById('activitySelect').value]?.riscos || []
+    };
+
+    let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
+    aprs.push(aprData);
+    localStorage.setItem('aprs', JSON.stringify(aprs));
+
+    alert('APR Enviada com Sucesso! Aguarde aprovação.');
+    
+    changeStep(1 - currentStep); 
+    document.getElementById('userPin').value = "";
+    showTab('dds'); 
+}
+
+// ============================================================
+// COORDENADOR - APROVAÇÃO
+// ============================================================
+
+function avisarOutlook(nome, atividade, emailOperador) {
+    // Se não tiver email, pede para digitar
+    if (!emailOperador || !emailOperador.includes('@')) {
+        emailOperador = prompt(`Digite o email do(a) ${nome} para enviar a confirmação:`);
+        if (!emailOperador || !emailOperador.includes('@')) {
+            alert('Email inválido! Operação cancelada.');
+            return;
         }
-
-        document.getElementById('step' + currentStep).classList.remove('active');
-        currentStep += direction;
-        document.getElementById('step' + currentStep).classList.add('active');
-
-        document.getElementById('btnBack').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
-        document.getElementById('btnNext').style.display = currentStep === totalSteps ? 'none' : 'block';
-        document.getElementById('btnSubmit').style.display = currentStep === totalSteps ? 'block' : 'none';
     }
 
-    function submitFormAPR() {
-        const pin = document.getElementById('userPin').value;
-        if (pin.length < 4) return alert('Digite seu PIN de 4 dígitos para assinar.');
+    const assunto = `✅ APR APROVADA - ${nome}`;
+    const corpo = `
+Olá ${nome},
 
-        const aprData = {
-            id: Date.now(),
-            user: user.name, 
-            colaborador: user.name,
-            atividade: document.getElementById('activitySelect').options[document.getElementById('activitySelect').selectedIndex].text,
-            status: 'pendente',
-            data: new Date().toLocaleString(),
-            riscos: activityData[document.getElementById('activitySelect').value]?.riscos || []
-        };
+Sua APR para a atividade de "${atividade}" foi ANALISADA e APROVADA pelo coordenador! ✅👷
 
-        let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
-        aprs.push(aprData);
+O PDF de liberação já foi gerado no sistema e está anexado a este email.
+
+Você já pode iniciar os trabalhos com segurança.
+
+---
+Atenciosamente,
+Coordenação de Segurança
+LHOST - Gestão Industrial
+    `.trim();
+
+    const assuntoCodificado = encodeURIComponent(assunto);
+    const corpoCodificado = encodeURIComponent(corpo);
+    const mailtoLink = `mailto:${emailOperador}?subject=${assuntoCodificado}&body=${corpoCodificado}`;
+    
+    window.open(mailtoLink, '_blank');
+    alert(`📧 Outlook aberto para enviar confirmação para ${emailOperador}`);
+}
+
+function carregarAPRs() {
+    const lista = JSON.parse(localStorage.getItem('aprs') || '[]');
+    const container = document.getElementById('lista-aprs');
+    if(!container) return;
+    
+    const pendentes = lista.filter(a => a.status !== 'aprovado' && a.status !== 'rejeitado');
+    const aprovadas = lista.filter(a => a.status === 'aprovado');
+    
+    let html = '';
+
+    // 1. SEÇÃO DE APRs PENDENTES
+    html += `<h4 style="color: var(--primary-navy); margin-bottom: 10px;">⏳ Aguardando Aprovação</h4>`;
+    if(pendentes.length === 0) { 
+        html += "<p style='color: #666; margin-bottom: 20px;'>Nenhuma APR pendente no momento.</p>"; 
+    } else {
+        html += pendentes.map(a => {
+            const riscosTexto = Array.isArray(a.riscos) ? a.riscos.join(', ') : (a.riscos || "Sem riscos marcados");
+            const nomeOp = a.colaborador || a.user || "Não identificado";
+            
+            return `
+            <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <strong>Operador:</strong> ${nomeOp} <br>
+                <strong>Atividade:</strong> ${a.atividade || 'Não especificada'} <br>
+                <strong>Riscos:</strong> <span style="color: #E74C3C;">${riscosTexto}</span>
+                <div style="margin-top: 15px;">
+                    <button onclick="gerarPDF(${a.id})" class="btn btn-success" style="padding: 8px 12px; font-size: 0.9rem;">✅ Aprovar e Gerar PDF</button>
+                    <button onclick="rejeitarAPR(${a.id})" class="btn" style="background: #E74C3C; color: white; padding: 8px 12px; font-size: 0.9rem; margin-left: 8px;">❌ Rejeitar</button>
+                </div>
+            </div>
+            `;
+        }).join('');
+    }
+
+    // 2. SEÇÃO DE APRs APROVADAS (HISTÓRICO COM BOTÃO DE OUTLOOK)
+    if(aprovadas.length > 0) {
+        html += `<h4 style="color: #27ae60; margin-top: 30px; margin-bottom: 10px; border-top: 1px solid #ddd; padding-top: 20px;">✅ APRs Aprovadas (Histórico)</h4>`;
+        html += aprovadas.map(a => {
+            const nomeOp = a.colaborador || a.user || "Não identificado";
+            // Tenta pegar email do operador (se tiver salvo no localStorage ou na APR)
+            const emailOp = a.email || localStorage.getItem(`email_${nomeOp}`) || '';
+            
+            return `
+            <div style="border: 1px solid #2ECC71; padding: 15px; margin-bottom: 10px; border-radius: 8px; background: #F4FDF8;">
+                <strong>Operador:</strong> ${nomeOp} <br>
+                <strong>Atividade:</strong> ${a.atividade || 'Não especificada'} <br>
+                <small style="color: #555;">Assinada em: ${a.data}</small>
+                <div style="margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button onclick="gerarPDF(${a.id})" class="btn" style="background: #27ae60; color: white; padding: 8px 12px; font-size: 0.9rem;">📄 Rebaixar PDF</button>
+                    <button onclick="avisarOutlook('${nomeOp}', '${a.atividade}', '${emailOp}')" class="btn" style="background: #0078D4; color: white; padding: 8px 12px; font-size: 0.9rem;">📧 Avisar no Outlook</button>
+                </div>
+            </div>
+            `;
+        }).join('');
+    }
+
+    container.innerHTML = html;
+}
+
+function aprovarAPR(id) {
+    let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
+    const index = aprs.findIndex(a => a.id === id);
+    if (index !== -1) {
+        aprs[index].status = 'aprovado';
         localStorage.setItem('aprs', JSON.stringify(aprs));
-
-        alert('APR Enviada com Sucesso! Aguarde aprovação.');
-        
-        // Retorna a APR para o Passo 1
-        changeStep(1 - currentStep); 
-        document.getElementById('userPin').value = "";
-        
-        // Volta para a tela inicial
-        showTab('dds'); 
+        carregarAPRs(); 
     }
+}
 
-    // --- APROVAÇÃO E HISTÓRICO DA APR (COORDENADOR) ---
-    function carregarAPRs() {
-        const lista = JSON.parse(localStorage.getItem('aprs') || "[]");
-        const container = document.getElementById('lista-aprs');
-        if(!container) return;
-        
-        const pendentes = lista.filter(a => a.status !== 'aprovado' && a.status !== 'rejeitado');
-        const aprovadas = lista.filter(a => a.status === 'aprovado');
-        
-        let html = '';
-
-        // 1. SEÇÃO DE APRs PENDENTES
-        html += `<h4 style="color: var(--primary-navy); margin-bottom: 10px;">⏳ Aguardando Aprovação</h4>`;
-        if(pendentes.length === 0) { 
-            html += "<p style='color: #666; margin-bottom: 20px;'>Nenhuma APR pendente no momento.</p>"; 
-        } else {
-            html += pendentes.map(a => {
-                const riscosTexto = Array.isArray(a.riscos) ? a.riscos.join(', ') : (a.riscos || "Sem riscos marcados");
-                const nomeOp = a.colaborador || a.user || "Não identificado";
-                
-                return `
-                <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <strong>Operador:</strong> ${nomeOp} <br>
-                    <strong>Atividade:</strong> ${a.atividade || 'Não especificada'} <br>
-                    <strong>Riscos:</strong> <span style="color: #E74C3C;">${riscosTexto}</span>
-                    <div style="margin-top: 15px;">
-                        <button onclick="gerarPDF(${a.id})" class="btn btn-success" style="padding: 8px 12px; font-size: 0.9rem;">✅ Aprovar e Gerar PDF</button>
-                        <button onclick="rejeitarAPR(${a.id})" class="btn" style="background: #E74C3C; color: white; padding: 8px 12px; font-size: 0.9rem; margin-left: 8px;">❌ Rejeitar</button>
-                    </div>
-                </div>
-                `;
-            }).join('');
-        }
-
-        // 2. SEÇÃO DE APRs APROVADAS (HISTÓRICO COM BOTÕES DE BACKUP)
-        if(aprovadas.length > 0) {
-            html += `<h4 style="color: #27ae60; margin-top: 30px; margin-bottom: 10px; border-top: 1px solid #ddd; padding-top: 20px;">✅ APRs Aprovadas (Histórico)</h4>`;
-            html += aprovadas.map(a => {
-                const nomeOp = a.colaborador || a.user || "Não identificado";
-                return `
-                <div style="border: 1px solid #2ECC71; padding: 15px; margin-bottom: 10px; border-radius: 8px; background: #F4FDF8;">
-                    <strong>Operador:</strong> ${nomeOp} <br>
-                    <strong>Atividade:</strong> ${a.atividade || 'Não especificada'} <br>
-                    <small style="color: #555;">Assinada em: ${a.data}</small>
-                    <div style="margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap;">
-                        <button onclick="gerarPDF(${a.id})" class="btn" style="background: #27ae60; color: white; padding: 8px 12px; font-size: 0.9rem;">📄 Rebaixar PDF</button>
-                        <button onclick="avisarWhatsApp('${nomeOp}', '${a.atividade}')" class="btn" style="background: #25D366; color: white; padding: 8px 12px; font-size: 0.9rem;">📱 Avisar no WhatsApp</button>
-                    </div>
-                </div>
-                `;
-            }).join('');
-        }
-
-        container.innerHTML = html;
-    }
-
-    function aprovarAPR(id) {
+function rejeitarAPR(id) {
+    if (confirm('Tem certeza que deseja rejeitar esta APR?')) {
         let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
         const index = aprs.findIndex(a => a.id === id);
         if (index !== -1) {
-            aprs[index].status = 'aprovado';
+            aprs[index].status = 'rejeitado';
             localStorage.setItem('aprs', JSON.stringify(aprs));
             carregarAPRs(); 
         }
     }
+}
 
-    function rejeitarAPR(id) {
-        if (confirm('Tem certeza que deseja rejeitar esta APR?')) {
-            let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
-            const index = aprs.findIndex(a => a.id === id);
-            if (index !== -1) {
-                aprs[index].status = 'rejeitado';
-                localStorage.setItem('aprs', JSON.stringify(aprs));
-                carregarAPRs(); 
-            }
-        }
+// ============================================================
+// PDF
+// ============================================================
+function gerarPDF(id) {
+    let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
+    const item = aprs.find(a => a.id === id);
+    if (!item) return;
+    
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.setFillColor(4, 56, 115); 
+    doc.rect(0, 0, 210, 32, 'F'); 
+    
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.setTextColor(255, 255, 255); 
+    doc.text("PORTAL LHOST - GESTÃO INDUSTRIAL", 15, 14);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text("Análise Preliminar de Risco (APR) - Emissão Eletrônica", 15, 23);
+    
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(4, 56, 115); 
+    doc.text("1. IDENTIFICAÇÃO DO COLABORADOR E TURNO", 15, 48);
+    
+    doc.setDrawColor(226, 232, 240); 
+    doc.setLineWidth(0.5);
+    doc.line(15, 51, 195, 51);
+    
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
+    doc.setTextColor(33, 37, 41); 
+    
+    const nomeColaborador = item.colaborador || item.user || "Não identificado";
+    doc.text("Colaborador / Operador:", 15, 62);
+    doc.setFont("helvetica", "normal");
+    doc.text(nomeColaborador, 62, 62);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text("Data/Hora de Registro:", 15, 70);
+    doc.setFont("helvetica", "normal");
+    doc.text(item.data || item.dataEnvio || new Date().toLocaleString(), 62, 70);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text("Atividade Selecionada:", 15, 78);
+    doc.setFont("helvetica", "normal");
+    doc.text(item.atividade || 'Não especificada', 62, 78);
+    
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(4, 56, 115);
+    doc.text("2. RISCOS DETECTADOS E EPIs OBRIGATÓRIOS", 15, 95);
+    doc.line(15, 98, 195, 98);
+    
+    doc.setFillColor(244, 249, 255); 
+    doc.rect(15, 103, 180, 26, 'F');
+    
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(231, 76, 60); 
+    doc.text("Atenção aos Riscos Identificados da Operação:", 20, 111);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(33, 37, 41);
+    const risksText = Array.isArray(item.riscos) ? item.riscos.join(', ') : (item.riscos || "Nenhum cadastrado");
+    
+    const splitRiscos = doc.splitTextToSize(risksText, 170);
+    doc.text(splitRiscos, 20, 119);
+    
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(4, 56, 115);
+    doc.text("3. PROTOCOLO DE CONFORMIDADE E ASSINATURA", 15, 145);
+    doc.line(15, 148, 195, 148);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.setTextColor(108, 117, 125); 
+    doc.text("Este documento certifica que o operador realizou o preenchimento da APR digital obrigatória,", 15, 156);
+    doc.text("validando a presença de EPIs e confirmando sua plena aptidão física e mental para o trabalho.", 15, 161);
+    doc.text(`Chave Eletrônica de Verificação: LHOST-SECURE-ID-${id}`, 15, 167);
+    
+    doc.setDrawColor(46, 204, 113); 
+    doc.setLineWidth(1);
+    doc.setFillColor(232, 248, 245); 
+    doc.rect(15, 175, 180, 18, 'FD'); 
+    
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(22, 160, 133); 
+    doc.text("STATUS: APR ANALISADA E APROVADA PELO COORDENADOR", 25, 186);
+    
+    doc.save(`APR_${id}.pdf`);
+    aprovarAPR(id);
+}
+
+// ============================================================
+// WHATSAPP E OUTLOOK
+// ============================================================
+function savePhone() {
+    const p = document.getElementById('tool-phone').value;
+    localStorage.setItem('contato_ferramentaria', p);
+    alert("Número salvo!");
+}
+
+function saveEmail() {
+    const email = document.getElementById('tool-email').value;
+    if (!email || !email.includes('@')) {
+        alert('Por favor, digite um email válido (ex: ferramentaria@empresa.com)');
+        return;
     }
+    localStorage.setItem('contato_ferramentaria_email', email);
+    alert('✅ Email salvo com sucesso!');
+}
 
-    // --- EMISSÃO DE PDF PADRÃO CORPORATIVO ---
-    function gerarPDF(id) {
-        let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
-        const item = aprs.find(a => a.id === id);
-        if (!item) return;
-        
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        // 1. CABEÇALHO FORMAL (Banner Azul Escuro do Fluxo Digital)
-        doc.setFillColor(4, 56, 115); 
-        doc.rect(0, 0, 210, 32, 'F'); 
-        
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(16);
-        doc.setTextColor(255, 255, 255); 
-        doc.text("PORTAL LHOST - GESTÃO INDUSTRIAL", 15, 14);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(10);
-        doc.text("Análise Preliminar de Risco (APR) - Emissão Eletrônica", 15, 23);
-        
-        // 2. SEÇÃO 1: IDENTIFICAÇÃO DA ATIVIDADE
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(12);
-        doc.setTextColor(4, 56, 115); 
-        doc.text("1. IDENTIFICAÇÃO DO COLABORADOR E TURNO", 15, 48);
-        
-        doc.setDrawColor(226, 232, 240); 
-        doc.setLineWidth(0.5);
-        doc.line(15, 51, 195, 51);
-        
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10);
-        doc.setTextColor(33, 37, 41); 
-        
-        doc.text("Colaborador / Operador:", 15, 62);
-        doc.setFont("helvetica", "normal");
-        doc.text(`${item.colaborador || item.user}`, 62, 62);
-        
-        doc.setFont("helvetica", "bold");
-        doc.text("Data/Hora de Registro:", 15, 70);
-        doc.setFont("helvetica", "normal");
-        doc.text(`${item.data || item.dataEnvio}`, 62, 70);
-        
-        doc.setFont("helvetica", "bold");
-        doc.text("Atividade Selecionada:", 15, 78);
-        doc.setFont("helvetica", "normal");
-        doc.text(`${item.atividade || 'Não especificada'}`, 62, 78);
-        
-        // 3. SEÇÃO 2: MAPEAMENTO DE RISCOS
-        doc.setFont("helvetica", "bold");
-        doc.setTextColor(4, 56, 115);
-        doc.text("2. RISCOS DETECTADOS E EPIs OBRIGATÓRIOS", 15, 95);
-        doc.line(15, 98, 195, 98);
-        
-        doc.setFillColor(244, 249, 255); 
-        doc.rect(15, 103, 180, 26, 'F');
-        
-        doc.setFont("helvetica", "bold");
-        doc.setTextColor(231, 76, 60); 
-        doc.text("Atenção aos Riscos Identificados da Operação:", 20, 111);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setTextColor(33, 37, 41);
-        const risksText = Array.isArray(item.riscos) ? item.riscos.join(', ') : (item.riscos || "Nenhum cadastrado");
-        
-        const splitRiscos = doc.splitTextToSize(risksText, 170);
-        doc.text(splitRiscos, 20, 119);
-        
-        // 4. SEÇÃO 3: VALIDAÇÃO E ASSINATURA DIGITAL
-        doc.setFont("helvetica", "bold");
-        doc.setTextColor(4, 56, 115);
-        doc.text("3. PROTOCOLO DE CONFORMIDADE E ASSINATURA", 15, 145);
-        doc.line(15, 148, 195, 148);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9);
-        doc.setTextColor(108, 117, 125); 
-        doc.text("Este documento certifica que o operador realizou o preenchimento da APR digital obrigatória,", 15, 156);
-        doc.text("validando a presença de EPIs e confirmando sua plena aptidão física e mental para o trabalho.", 15, 161);
-        doc.text(`Chave Eletrônica de Verificação: LHOST-SECURE-ID-${id}`, 15, 167);
-        
-        doc.setDrawColor(46, 204, 113); 
-        doc.setLineWidth(1);
-        doc.setFillColor(232, 248, 245); 
-        doc.rect(15, 175, 180, 18, 'FD'); 
-        
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(11);
-        doc.setTextColor(22, 160, 133); 
-        doc.text("STATUS: APR ANALISADA E APROVADA PELO COORDENADOR", 25, 186);
-        
-        doc.save(`APR_${id}.pdf`);
-        aprovarAPR(id);
-    }
-
-    // --- MANIFESTO MANUAL VIA WHATSAPP (OPCIONAL) ---
-    function avisarWhatsApp(nome, atividade) {
-        const telefone = prompt(`Digite o número de WhatsApp do(a) ${nome} (Apenas números com DDD, ex: 31988887777):`);
-        if (telefone) {
-            const numLimpo = telefone.replace(/\D/g, '');
-            const msg = `Olá *${nome}*, sua APR para a atividade de *${atividade}* foi analisada e *APROVADA* pelo coordenador! ✅👷‍♂️\n\nO PDF de liberação já foi gerado no sistema. Você já pode iniciar os trabalhos com segurança.`;
-            const url = `https://api.whatsapp.com/send?phone=55${numLimpo}&text=${encodeURIComponent(msg)}`;
-            window.open(url, '_blank').focus();
-        }
-    }
-
-    // --- FERRAMENTARIA ---
-    function savePhone() {
-        const p = document.getElementById('tool-phone').value;
-        localStorage.setItem('contato_ferramentaria', p);
-        alert("Número salvo!");
-    }
-
-    function enviarWhatsAppFerramenta() {
+function enviarWhatsAppFerramenta() {
     let fone = document.getElementById('tool-phone').value.replace(/\D/g, '');
     if(!fone) return alert("Por favor, configure o número da ferramentaria primeiro.");
     if (fone.length <= 11) fone = "55" + fone;
 
-    // Coletar todos os dados do formulário
     const setor = document.getElementById('tool-setor').value || 'Não informado';
     const matricula = document.getElementById('tool-matricula').value || 'Não informada';
     const solicitante = document.getElementById('tool-user').value || 'Não informado';
@@ -911,7 +1032,6 @@
     const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
     const dataAtual = new Date().toLocaleString('pt-BR');
 
-    // Formatar datas para exibição amigável
     const formatarData = (data) => {
         if (!data || data === 'Não informada') return data;
         const partes = data.split('-');
@@ -921,7 +1041,6 @@
     const dataEntregaFormatada = formatarData(dataEntrega);
     const prazoLimiteFormatado = formatarData(prazoLimite);
 
-    // Construir a mensagem com formato profissional
     const msg = `
 *🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST*
 
@@ -953,41 +1072,17 @@
 *📱 Responder por este mesmo canal*
     `.trim();
 
-    // Gerar URL do WhatsApp
     const url = `https://api.whatsapp.com/send?phone=${fone}&text=${encodeURIComponent(msg)}`;
-    
-    // Abrir WhatsApp em nova aba
     window.open(url, '_blank');
 }
 
-
-// ===== FUNÇÕES PARA OUTLOOK/EMAIL =====
-
-// Salvar email da ferramentaria
-function saveEmail() {
-    const email = document.getElementById('tool-email').value;
-    if (!email || !email.includes('@')) {
-        alert('Por favor, digite um email válido (ex: ferramentaria@empresa.com)');
-        return;
-    }
-    localStorage.setItem('contato_ferramentaria_email', email);
-    alert('✅ Email salvo com sucesso!');
-}
-
-// Carregar email salvo ao logar
-// Adicione esta linha dentro da função login(), depois de carregar o telefone:
-// document.getElementById('tool-email').value = localStorage.getItem('contato_ferramentaria_email') || "";
-
-// Enviar solicitação via Outlook
 function enviarOutlookFerramenta() {
-    // Pegar email salvo
     let email = document.getElementById('tool-email').value;
     if (!email || !email.includes('@')) {
         alert('⚠️ Por favor, configure um email válido para a ferramentaria.');
         return;
     }
 
-    // Coletar todos os dados do formulário
     const setor = document.getElementById('tool-setor').value || 'Não informado';
     const matricula = document.getElementById('tool-matricula').value || 'Não informada';
     const solicitante = document.getElementById('tool-user').value || 'Não informado';
@@ -999,7 +1094,6 @@ function enviarOutlookFerramenta() {
     const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
     const dataAtual = new Date().toLocaleString('pt-BR');
 
-    // Formatar datas
     const formatarData = (data) => {
         if (!data || data === 'Não informada') return data;
         const partes = data.split('-');
@@ -1009,10 +1103,8 @@ function enviarOutlookFerramenta() {
     const dataEntregaFormatada = formatarData(dataEntrega);
     const prazoLimiteFormatado = formatarData(prazoLimite);
 
-    // Construir assunto do email
     const assunto = `🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST - ${item}`;
 
-    // Construir corpo do email com formato profissional
     const corpo = `
 SOLICITAÇÃO DE FERRAMENTA - LHOST
 
@@ -1044,139 +1136,54 @@ Protocolo: LHOST-${Date.now().toString().slice(-6)}
 📱 Responder por este mesmo canal
     `.trim();
 
-    // Codificar para URL
     const assuntoCodificado = encodeURIComponent(assunto);
     const corpoCodificado = encodeURIComponent(corpo);
-
-    // Criar link mailto para Outlook
     const mailtoLink = `mailto:${email}?subject=${assuntoCodificado}&body=${corpoCodificado}`;
-
-    // Abrir Outlook (ou cliente de email padrão)
     window.open(mailtoLink, '_blank');
-
-    // Feedback
     alert('📧 O Outlook foi aberto com a solicitação preenchida!\n\nVerifique se o email está correto e clique em enviar.');
 }
 
-// ===== FUNÇÃO PARA WHATSAPP ATUALIZADA =====
-// (Mantém a mesma, mas vou colocar aqui para referência)
-function enviarWhatsAppFerramenta() {
-    let fone = document.getElementById('tool-phone').value.replace(/\D/g, '');
-    if(!fone) return alert("⚠️ Por favor, configure o número da ferramentaria primeiro.");
-    if (fone.length <= 11) fone = "55" + fone;
-
-    // Coletar todos os dados do formulário
-    const setor = document.getElementById('tool-setor').value || 'Não informado';
-    const matricula = document.getElementById('tool-matricula').value || 'Não informada';
-    const solicitante = document.getElementById('tool-user').value || 'Não informado';
-    const tecnico = document.getElementById('tool-tecnico').value || 'Não informado';
-    const responsavel = document.getElementById('tool-responsavel').value || 'Não informado';
-    const item = document.getElementById('tool-item').value || 'Não informado';
-    const quantidade = document.getElementById('tool-qtd').value || '1';
-    const dataEntrega = document.getElementById('tool-date').value || 'Não informada';
-    const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
-    const dataAtual = new Date().toLocaleString('pt-BR');
-
-    // Formatar datas
-    const formatarData = (data) => {
-        if (!data || data === 'Não informada') return data;
-        const partes = data.split('-');
-        return `${partes[2]}/${partes[1]}/${partes[0]}`;
-    };
-
-    const dataEntregaFormatada = formatarData(dataEntrega);
-    const prazoLimiteFormatado = formatarData(prazoLimite);
-
-    // Construir a mensagem
-    const msg = `
-*🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST*
-
-*📋 DADOS DO SOLICITANTE*
-━━━━━━━━━━━━━━━━━━━━
-🏢 *Empresa/Setor:* ${setor}
-👤 *Solicitante:* ${solicitante}
-🔢 *Matrícula:* ${matricula}
-👨‍🔧 *Técnico Responsável:* ${tecnico}
-👔 *Responsável pelo Setor:* ${responsavel}
-
-*🛠️ DETALHES DA SOLICITAÇÃO*
-━━━━━━━━━━━━━━━━━━━━
-📦 *Item:* ${item}
-🔢 *Quantidade:* ${quantidade}
-📅 *Data de Entrega:* ${dataEntregaFormatada}
-⏰ *Prazo Limite:* ${prazoLimiteFormatado}
-
-*📌 INFORMAÇÕES ADICIONAIS*
-━━━━━━━━━━━━━━━━━━━━
-📝 *Solicitação Gerada em:* ${dataAtual}
-🆔 *Protocolo:* LHOST-${Date.now().toString().slice(-6)}
-
-*⚠️ IMPORTANTE:*
-- Confirmar disponibilidade no estoque
-- Registrar saída no sistema
-- Comunicar ao solicitante sobre o prazo
-
-*📱 Responder por este mesmo canal*
-    `.trim();
-
-    const url = `https://api.whatsapp.com/send?phone=${fone}&text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-}
-
-function login() {
-    user.nome = document.getElementById('nome').value;
-    user.matricula = document.getElementById('matricula').value;
-    user.role = document.getElementById('user-role').value.toLowerCase().trim(); 
-    
-    if(!user.matricula) return alert("Digite sua matrícula.");
-
-    document.getElementById('login-screen').classList.add('hidden');
-    document.getElementById('main-app').classList.remove('hidden');
-    document.getElementById('user-info').innerHTML = `<strong>${user.matricula}</strong> (${user.role} - ${user.nome}) <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>`;
-    
-    setupNav();
-    document.getElementById('tool-user').value = user.matricula;
-    document.getElementById('tool-phone').value = localStorage.getItem('contato_ferramentaria') || "";
-    
-    // ===== NOVA LINHA PARA CARREGAR EMAIL =====
-    document.getElementById('tool-email').value = localStorage.getItem('contato_ferramentaria_email') || "";
-    // ===== FIM DA NOVA LINHA =====
-    
-    showTab('dds');
-    atualizarDataHora();
-    setInterval(atualizarDataHora, 1000);
-}
-    // --- NOVO PROTOCOLO: VIGIA EM TEMPO REAL NA TELA DO OPERADOR ---
-    function checarAprovacaoOperador() {
-        let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
-        let houveAlteracao = false;
-
-        aprs.forEach(a => {
-            // Se pertencer ao operador conectado, estiver aprovada e ainda não disparou o pop-up
-            if ((a.colaborador === user.name || a.user === user.name) && a.status === 'aprovado' && !a.notificadoNaTela) {
-                
-                // Dispara o alerta instantâneo na tela dele!
-                alert(`🎉 Atenção ${user.name}!\n\nSua APR para a atividade de "${a.atividade}" foi ANALISADA e APROVADA pelo coordenador! ✅👷\n\nO documento formal já está arquivado e você está liberado para iniciar os trabalhos com segurança.`);
-                
-                a.notificadoNaTela = true;
-                houveAlteracao = true;
-            }
-        });
-
-        if (houveAlteracao) {
-            localStorage.setItem('aprs', JSON.stringify(aprs));
-        }
+function avisarWhatsApp(nome, atividade) {
+    const telefone = prompt(`Digite o número de WhatsApp do(a) ${nome} (Apenas números com DDD, ex: 31988887777):`);
+    if (telefone) {
+        const numLimpo = telefone.replace(/\D/g, '');
+        const msg = `Olá *${nome}*, sua APR para a atividade de *${atividade}* foi analisada e *APROVADA* pelo coordenador! ✅👷‍♂️\n\nO PDF de liberação já foi gerado no sistema. Você já pode iniciar os trabalhos com segurança.`;
+        const url = `https://api.whatsapp.com/send?phone=55${numLimpo}&text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank').focus();
     }
+}
 
-    // --- ENGINE DE ATUALIZAÇÕES EM BACKGROUND (A CADA 3 SEGUNDOS) ---
-    setInterval(() => {
-        if (user.role === 'coordenador') {
-            carregarReclamacoesCoord();
-            carregarAPRs();
-        } else if (user.role === 'operador') {
-            checarAprovacaoOperador();
+// ============================================================
+// NOTIFICAÇÃO EM TEMPO REAL (OPERADOR)
+// ============================================================
+function checarAprovacaoOperador() {
+    let aprs = JSON.parse(localStorage.getItem('aprs') || '[]');
+    let houveAlteracao = false;
+
+    aprs.forEach(a => {
+        if ((a.colaborador === user.nome || a.user === user.nome) && a.status === 'aprovado' && !a.notificadoNaTela) {
+            alert(`🎉 Atenção ${user.nome}!\n\nSua APR para a atividade de "${a.atividade}" foi ANALISADA e APROVADA pelo coordenador! ✅👷\n\nO documento formal já está arquivado e você está liberado para iniciar os trabalhos com segurança.`);
+            a.notificadoNaTela = true;
+            houveAlteracao = true;
         }
-    }, 3000);
+    });
+
+    if (houveAlteracao) {
+        localStorage.setItem('aprs', JSON.stringify(aprs));
+    }
+}
+
+// ============================================================
+// ENGINE DE ATUALIZAÇÃO EM BACKGROUND (A CADA 3 SEGUNDOS)
+// ============================================================
+setInterval(() => {
+    if (user.role === 'coordenador') {
+        carregarReclamacoesCoord();
+        carregarAPRs();
+    } else if (user.role === 'operador') {
+        checarAprovacaoOperador();
+    }
+}, 3000);
 </script>
 </body>
 </html>
