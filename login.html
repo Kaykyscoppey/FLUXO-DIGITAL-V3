@@ -241,7 +241,33 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* ================= ESTILO DA DATA/HORA ================= */
+        .data-hora-container {
+            background: #F8FAFC;
+            border: 1px dashed var(--primary-blue);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .data-hora-label {
+            font-weight: 600;
+            color: var(--primary-navy);
+            font-size: 0.9rem;
+        }
+
+        .data-hora-valor {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary-navy);
+            background: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
         
     </style>
 </head>
@@ -252,7 +278,8 @@
         <h1>Bem-vindo!</h1>
         <p>Acesse o Portal de Operações</p>
         <div class="form-group">
-            <input type="text" id="username" placeholder="Seu Nome Completo">
+            <input type="text" id="nome" placeholder="Seu Nome">
+            <input type="number" id="matricula" placeholder="Sua Matrícula">
         </div>
         <div class="form-group">
             <select id="user-role">
@@ -320,45 +347,70 @@
             </div>
         </section>
 
-        <section id="tab-ferramentas" class="tab-content hidden">
-            <div class="card">
-                <h3>Solicitação de Ferramentas via WhatsApp</h3>
-                
-                <div style="background: #fdf9e7; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                    <label>📱 Número da Ferramentaria (WhatsApp)</label>
-                    <input type="text" id="tool-phone" placeholder="Ex: 5531988887777" style="max-width: 250px;">
-                    <button onclick="savePhone()" class="btn" style="background:#555; color:white; padding: 5px 15px;">Salvar Número</button>
+    <section id="tab-ferramentas" class="tab-content hidden">
+    <div class="card">
+        <h3>Solicitação de Ferramentas</h3>
+        
+        <!-- ===== CONTATOS ===== -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+            
+            <!-- WhatsApp -->
+            <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border: 2px solid #25D366;">
+                <label style="color: #075E54;">📱 WhatsApp</label>
+                <div style="display: flex; gap: 8px; margin-top: 5px;">
+                    <input type="text" id="tool-phone" placeholder="Ex: 5531988887777" style="flex: 1;">
+                    <button onclick="savePhone()" class="btn" style="background:#25D366; color:white; padding: 5px 15px;">Salvar</button>
                 </div>
-
-                <div class="grid-2">
-                    <div class="form-group"><label>Empresa/Setor</label><input type="text" id="tool-setor" value="LHOST - Produção"></div>
-                    <div class="form-group"><label>Matrícula</label><input type="text" id="tool-matricula" placeholder="000000"></div>
-                </div>
-
-                <div class="grid-2">
-                    <div class="form-group"><label>Solicitante (Operador)</label><input type="text" id="tool-user" readonly></div>
-                    <div class="form-group"><label>Solicitante Técnico</label><input type="text" id="tool-tecnico" placeholder="Nome do técnico"></div>
-                </div>
-
-                <div class="form-group"><label>Responsável pelo Setor</label><input type="text" id="tool-responsavel" placeholder="Nome do responsável"></div>
-
-                <hr>
-
-                <div class="grid-2">
-                    <div class="form-group"><label>Item Solicitado</label><input type="text" id="tool-item" placeholder="Ex: Chave de Fenda"></div>
-                    <div class="form-group"><label>Quantidade</label><input type="number" id="tool-qtd" value="1"></div>
-                </div>
-
-                <div class="grid-2">
-                    <div class="form-group"><label>Data de Entrega</label><input type="date" id="tool-date"></div>
-                    <div class="form-group"><label>Prazo Limite</label><input type="date" id="tool-deadline"></div>
-                </div>
-
-                <button onclick="enviarWhatsAppFerramenta()" class="btn btn-success" style="background: #25D366; width: 100%; font-size: 1.1rem;">
-                    Gerar Mensagem e Enviar WhatsApp
-                </button>
             </div>
-        </section>
+            
+            <!-- Outlook/Email -->
+            <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; border: 2px solid #0078D4;">
+                <label style="color: #0078D4;">📧 Outlook / Email</label>
+                <div style="display: flex; gap: 8px; margin-top: 5px;">
+                    <input type="email" id="tool-email" placeholder="Ex: ferramentaria@empresa.com" style="flex: 1;">
+                    <button onclick="saveEmail()" class="btn" style="background:#0078D4; color:white; padding: 5px 15px;">Salvar</button>
+                </div>
+            </div>
+        </div>
+        <!-- ===== FIM CONTATOS ===== -->
+
+        <!-- Restante do formulário igual -->
+        <div class="grid-2">
+            <div class="form-group"><label>Empresa/Setor</label><input type="text" id="tool-setor" value="LHOST - Produção"></div>
+            <div class="form-group"><label>Matrícula</label><input type="text" id="tool-matricula" placeholder="000000"></div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group"><label>Solicitante (Operador)</label><input type="text" id="tool-user" readonly></div>
+            <div class="form-group"><label>Solicitante Técnico</label><input type="text" id="tool-tecnico" placeholder="Nome do técnico"></div>
+        </div>
+
+        <div class="form-group"><label>Responsável pelo Setor</label><input type="text" id="tool-responsavel" placeholder="Nome do responsável"></div>
+
+        <hr>
+
+        <div class="grid-2">
+            <div class="form-group"><label>Item Solicitado</label><input type="text" id="tool-item" placeholder="Ex: Chave de Fenda"></div>
+            <div class="form-group"><label>Quantidade</label><input type="number" id="tool-qtd" value="1"></div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group"><label>Data de Entrega</label><input type="date" id="tool-date"></div>
+            <div class="form-group"><label>Prazo Limite</label><input type="date" id="tool-deadline"></div>
+        </div>
+
+        <!-- ===== BOTÕES DE ENVIO ===== -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+            <button onclick="enviarWhatsAppFerramenta()" class="btn" style="background: #25D366; color: white; font-size: 1rem; padding: 12px;">
+                📱 Enviar WhatsApp
+            </button>
+            <button onclick="enviarOutlookFerramenta()" class="btn" style="background: #0078D4; color: white; font-size: 1rem; padding: 12px;">
+                📧 Enviar Outlook
+            </button>
+        </div>
+        
+    </div>
+</section>
 
        <section id="tab-preencher-apr" class="tab-content hidden">
     <div class="apr-container" style="margin: 0 auto;">
@@ -382,9 +434,12 @@
         <div class="step-panel active" id="step1">
             <div class="step-title"><span>1/4</span> Identificação & Prontidão</div>
             
-            <div class="autofill-info" style="background: #F8FAFC; border: 1px dashed var(--primary-blue); border-radius: 10px; padding: 12px; margin-bottom: 15px;">
-                <div class="info-row" style="display: flex; justify-content: space-between;"><span class="info-label">Data/Hora:</span><span class="info-value" id="currentDateTime"></span></div>
+            <!-- ========== DATA/HORA ADICIONADA AQUI ========== -->
+            <div class="data-hora-container">
+                <span class="data-hora-label">📅 Data/Hora:</span>
+                <span class="data-hora-valor" id="currentDateTime">Carregando...</span>
             </div>
+            <!-- ========== FIM DA DATA/HORA ========== -->
 
             <div class="question-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
                 <div style="margin-bottom: 10px;">Você está apto, descansado e se sente 100% seguro para executar a atividade?</div>
@@ -450,23 +505,49 @@
 </div>
 
 <script>
- let user = { name: '', role: '' };
+ let user = { matricula: '', role: '', nome: '' };
+
+    // ========== FUNÇÃO DATA/HORA ==========
+    function atualizarDataHora() {
+        const agora = new Date();
+        const dataHora = agora.toLocaleString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+        
+        const elemento = document.getElementById('currentDateTime');
+        if (elemento) {
+            elemento.textContent = dataHora;
+        }
+    }
+    // ========== FIM DA FUNÇÃO DATA/HORA ==========
 
     // --- LOGIN E NAVEGAÇÃO ---
     function login() {
-        user.name = document.getElementById('username').value;
+        user.nome = document.getElementById('nome').value;
+        user.matricula = document.getElementById('matricula').value;
         user.role = document.getElementById('user-role').value.toLowerCase().trim(); 
         
-        if(!user.name) return alert("Digite seu nome.");
+        if(!user.matricula) return alert("Digite sua matrícula.");
 
         document.getElementById('login-screen').classList.add('hidden');
         document.getElementById('main-app').classList.remove('hidden');
-        document.getElementById('user-info').innerHTML = `<strong>${user.name}</strong> (${user.role}) <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>`;
+        document.getElementById('user-info').innerHTML = `<strong>${user.matricula}</strong> (${user.role} - ${user.nome}) <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>`;
         
         setupNav();
-        document.getElementById('tool-user').value = user.name;
+        document.getElementById('tool-user').value = user.matricula;
         document.getElementById('tool-phone').value = localStorage.getItem('contato_ferramentaria') || "";
         showTab('dds');
+        
+        // ========== CHAMA A DATA/HORA AO LOGAR ==========
+        atualizarDataHora();
+        // Atualiza a cada segundo
+        setInterval(atualizarDataHora, 1000);
+        // ========== FIM DA CHAMADA ==========
     }
 
     function setupNav() {
@@ -877,6 +958,193 @@
     
     // Abrir WhatsApp em nova aba
     window.open(url, '_blank');
+}
+
+
+// ===== FUNÇÕES PARA OUTLOOK/EMAIL =====
+
+// Salvar email da ferramentaria
+function saveEmail() {
+    const email = document.getElementById('tool-email').value;
+    if (!email || !email.includes('@')) {
+        alert('Por favor, digite um email válido (ex: ferramentaria@empresa.com)');
+        return;
+    }
+    localStorage.setItem('contato_ferramentaria_email', email);
+    alert('✅ Email salvo com sucesso!');
+}
+
+// Carregar email salvo ao logar
+// Adicione esta linha dentro da função login(), depois de carregar o telefone:
+// document.getElementById('tool-email').value = localStorage.getItem('contato_ferramentaria_email') || "";
+
+// Enviar solicitação via Outlook
+function enviarOutlookFerramenta() {
+    // Pegar email salvo
+    let email = document.getElementById('tool-email').value;
+    if (!email || !email.includes('@')) {
+        alert('⚠️ Por favor, configure um email válido para a ferramentaria.');
+        return;
+    }
+
+    // Coletar todos os dados do formulário
+    const setor = document.getElementById('tool-setor').value || 'Não informado';
+    const matricula = document.getElementById('tool-matricula').value || 'Não informada';
+    const solicitante = document.getElementById('tool-user').value || 'Não informado';
+    const tecnico = document.getElementById('tool-tecnico').value || 'Não informado';
+    const responsavel = document.getElementById('tool-responsavel').value || 'Não informado';
+    const item = document.getElementById('tool-item').value || 'Não informado';
+    const quantidade = document.getElementById('tool-qtd').value || '1';
+    const dataEntrega = document.getElementById('tool-date').value || 'Não informada';
+    const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
+    const dataAtual = new Date().toLocaleString('pt-BR');
+
+    // Formatar datas
+    const formatarData = (data) => {
+        if (!data || data === 'Não informada') return data;
+        const partes = data.split('-');
+        return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    };
+
+    const dataEntregaFormatada = formatarData(dataEntrega);
+    const prazoLimiteFormatado = formatarData(prazoLimite);
+
+    // Construir assunto do email
+    const assunto = `🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST - ${item}`;
+
+    // Construir corpo do email com formato profissional
+    const corpo = `
+SOLICITAÇÃO DE FERRAMENTA - LHOST
+
+📋 DADOS DO SOLICITANTE
+━━━━━━━━━━━━━━━━━━━━
+Empresa/Setor: ${setor}
+Solicitante: ${solicitante}
+Matrícula: ${matricula}
+Técnico Responsável: ${tecnico}
+Responsável pelo Setor: ${responsavel}
+
+🛠️ DETALHES DA SOLICITAÇÃO
+━━━━━━━━━━━━━━━━━━━━
+Item: ${item}
+Quantidade: ${quantidade}
+Data de Entrega: ${dataEntregaFormatada}
+Prazo Limite: ${prazoLimiteFormatado}
+
+📌 INFORMAÇÕES ADICIONAIS
+━━━━━━━━━━━━━━━━━━━━
+Solicitação Gerada em: ${dataAtual}
+Protocolo: LHOST-${Date.now().toString().slice(-6)}
+
+⚠️ IMPORTANTE:
+- Confirmar disponibilidade no estoque
+- Registrar saída no sistema
+- Comunicar ao solicitante sobre o prazo
+
+📱 Responder por este mesmo canal
+    `.trim();
+
+    // Codificar para URL
+    const assuntoCodificado = encodeURIComponent(assunto);
+    const corpoCodificado = encodeURIComponent(corpo);
+
+    // Criar link mailto para Outlook
+    const mailtoLink = `mailto:${email}?subject=${assuntoCodificado}&body=${corpoCodificado}`;
+
+    // Abrir Outlook (ou cliente de email padrão)
+    window.open(mailtoLink, '_blank');
+
+    // Feedback
+    alert('📧 O Outlook foi aberto com a solicitação preenchida!\n\nVerifique se o email está correto e clique em enviar.');
+}
+
+// ===== FUNÇÃO PARA WHATSAPP ATUALIZADA =====
+// (Mantém a mesma, mas vou colocar aqui para referência)
+function enviarWhatsAppFerramenta() {
+    let fone = document.getElementById('tool-phone').value.replace(/\D/g, '');
+    if(!fone) return alert("⚠️ Por favor, configure o número da ferramentaria primeiro.");
+    if (fone.length <= 11) fone = "55" + fone;
+
+    // Coletar todos os dados do formulário
+    const setor = document.getElementById('tool-setor').value || 'Não informado';
+    const matricula = document.getElementById('tool-matricula').value || 'Não informada';
+    const solicitante = document.getElementById('tool-user').value || 'Não informado';
+    const tecnico = document.getElementById('tool-tecnico').value || 'Não informado';
+    const responsavel = document.getElementById('tool-responsavel').value || 'Não informado';
+    const item = document.getElementById('tool-item').value || 'Não informado';
+    const quantidade = document.getElementById('tool-qtd').value || '1';
+    const dataEntrega = document.getElementById('tool-date').value || 'Não informada';
+    const prazoLimite = document.getElementById('tool-deadline').value || 'Não informado';
+    const dataAtual = new Date().toLocaleString('pt-BR');
+
+    // Formatar datas
+    const formatarData = (data) => {
+        if (!data || data === 'Não informada') return data;
+        const partes = data.split('-');
+        return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    };
+
+    const dataEntregaFormatada = formatarData(dataEntrega);
+    const prazoLimiteFormatado = formatarData(prazoLimite);
+
+    // Construir a mensagem
+    const msg = `
+*🔧 SOLICITAÇÃO DE FERRAMENTA - LHOST*
+
+*📋 DADOS DO SOLICITANTE*
+━━━━━━━━━━━━━━━━━━━━
+🏢 *Empresa/Setor:* ${setor}
+👤 *Solicitante:* ${solicitante}
+🔢 *Matrícula:* ${matricula}
+👨‍🔧 *Técnico Responsável:* ${tecnico}
+👔 *Responsável pelo Setor:* ${responsavel}
+
+*🛠️ DETALHES DA SOLICITAÇÃO*
+━━━━━━━━━━━━━━━━━━━━
+📦 *Item:* ${item}
+🔢 *Quantidade:* ${quantidade}
+📅 *Data de Entrega:* ${dataEntregaFormatada}
+⏰ *Prazo Limite:* ${prazoLimiteFormatado}
+
+*📌 INFORMAÇÕES ADICIONAIS*
+━━━━━━━━━━━━━━━━━━━━
+📝 *Solicitação Gerada em:* ${dataAtual}
+🆔 *Protocolo:* LHOST-${Date.now().toString().slice(-6)}
+
+*⚠️ IMPORTANTE:*
+- Confirmar disponibilidade no estoque
+- Registrar saída no sistema
+- Comunicar ao solicitante sobre o prazo
+
+*📱 Responder por este mesmo canal*
+    `.trim();
+
+    const url = `https://api.whatsapp.com/send?phone=${fone}&text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+}
+
+function login() {
+    user.nome = document.getElementById('nome').value;
+    user.matricula = document.getElementById('matricula').value;
+    user.role = document.getElementById('user-role').value.toLowerCase().trim(); 
+    
+    if(!user.matricula) return alert("Digite sua matrícula.");
+
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('main-app').classList.remove('hidden');
+    document.getElementById('user-info').innerHTML = `<strong>${user.matricula}</strong> (${user.role} - ${user.nome}) <button onclick="location.reload()" style="margin-left:10px; cursor:pointer;">Sair</button>`;
+    
+    setupNav();
+    document.getElementById('tool-user').value = user.matricula;
+    document.getElementById('tool-phone').value = localStorage.getItem('contato_ferramentaria') || "";
+    
+    // ===== NOVA LINHA PARA CARREGAR EMAIL =====
+    document.getElementById('tool-email').value = localStorage.getItem('contato_ferramentaria_email') || "";
+    // ===== FIM DA NOVA LINHA =====
+    
+    showTab('dds');
+    atualizarDataHora();
+    setInterval(atualizarDataHora, 1000);
 }
     // --- NOVO PROTOCOLO: VIGIA EM TEMPO REAL NA TELA DO OPERADOR ---
     function checarAprovacaoOperador() {
